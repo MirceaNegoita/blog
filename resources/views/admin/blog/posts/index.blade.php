@@ -22,6 +22,10 @@
                             <thead>
                                 <th>ID</th>
                                 <th>Title</th>
+                                <th>Status</th>
+                                <th>Categories</th>
+                                <th>Tags</th>
+                                <th>Image</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </thead>
@@ -30,6 +34,36 @@
                                     <tr>
                                         <td>{{ $post->id }}</td>
                                         <td>{{ $post->title }}</td>
+                                        <td>
+                                            @if (isset($post->status))
+                                                {{ $post->status->label }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($post->categories->count())
+                                                @foreach ($post->categories as $category)
+                                                    {{ $category->name }}
+                                                @endforeach
+                                            @else
+                                                No cateogires set
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($post->tags->count())
+                                                @foreach ($post->tags as $tag)
+                                                    {{ $tag->name }}
+                                                @endforeach
+                                            @else
+                                                No tags set
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if (isset($post->media))
+                                                <img src="{{ asset($post->media->path) }}" style="object-fit:contain">
+                                            @else
+                                                Media not set
+                                            @endif
+                                        </td>
                                         <td><a class="btn btn-info" href="{{ route('post.edit', ['id' => $post->id, 'slug' => $post->title]) }}"><i class="fa fa-pencil"></i>Show</a></td>
                                         <td><a class="btn btn-danger" href="{{ route('post.delete', ['id' => $post->id]) }}"><i class="fa fa-trash"></i>Delete</a></td>
                                     </tr>
