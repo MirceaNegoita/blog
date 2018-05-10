@@ -38,6 +38,7 @@ class PostsController extends AdminController
         $post->subtitle = $request->input('subtitle');
         $post->content = $request->input('content');
         $post->author_id = $request->input('author');
+        $post->status_id = $request->input('status');
 
         if ($request->hasFile('image')) {
             $media = new Media();
@@ -83,6 +84,7 @@ class PostsController extends AdminController
         $post->subtitle = $request->input('subtitle');
         $post->content = $request->input('content');
         $post->author_id = $request->input('author');
+        $post->status_id = $request->input('status');
 
         if ($request->hasFile('image')) {
             $media = new Media();
