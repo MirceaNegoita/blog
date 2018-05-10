@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'subtitle', 'content', 'author_id', 'media_id'];
+    protected $fillable = ['title', 'subtitle', 'content', 'author_id', 'media_id', 'status_id'];
 
     public function categories()
     {
@@ -26,5 +26,10 @@ class Post extends Model
     public function author()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
     }
 }
