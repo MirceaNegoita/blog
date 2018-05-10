@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use App\Tag;
+use App\Status;
 use App\Media;
 use App\PostCategory;
 
@@ -25,8 +26,9 @@ class PostsController extends AdminController
         $tags = Tag::all();
         $categories = PostCategory::all();
         $authors = User::where('role_id', 1)->get();
+        $statuses = Status::all();
 
-        return view('admin.blog.posts.create', compact('tags', 'categories', 'authors'));
+        return view('admin.blog.posts.create', compact('tags', 'categories', 'authors', 'statuses'));
     }
 
     public function store(Request $request)
@@ -68,8 +70,9 @@ class PostsController extends AdminController
         $tags = Tag::all();
         $categories = PostCategory::all();
         $authors = User::where('role_id',1)->get();
+        $statuses = Status::all();
 
-        return view('admin.blog.posts.edit', compact('post', 'tags', 'categories', 'authors'));
+        return view('admin.blog.posts.edit', compact('post', 'tags', 'categories', 'authors', 'statuses'));
     }
 
     public function update(Request $request, $id)
