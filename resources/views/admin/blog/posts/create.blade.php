@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label for="status" class="control-label">Status</label>
-                        <select name="status">
+                        <select name="status" class="form-control">
                             @foreach ($statuses as $status)
                                 <option value="{{ $status->id }}">{{ $status->label }}</option>
                             @endforeach
