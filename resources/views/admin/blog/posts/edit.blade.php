@@ -63,6 +63,16 @@
                         <textarea name="content" id="" cols="30" rows="10" class="ckeditor">{{ $post->content }}</textarea>
                     </div>
                     <div class="form-group">
+                        <label for="status" class="control-label">Status</label>
+                        <select name="status" class="form-control">
+                            @foreach ($statuses as $status)
+                                @if ($status->id != $post->status->id)
+                                    <option value="{{ $status->id }}">{{ $status->label }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>Save</button>
                     </div>
                 </form>

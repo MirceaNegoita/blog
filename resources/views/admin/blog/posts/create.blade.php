@@ -31,6 +31,14 @@
                         <textarea name="content" id="" cols="30" rows="10" class="ckeditor"></textarea>
                     </div>
                     <div class="form-group">
+                        <label for="status" class="control-label">Status</label>
+                        <select name="status">
+                            @foreach ($statuses as $status)
+                                <option value="{{ $status->id }}">{{ $status->label }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>Save</button>
                     </div>
                 </form>
