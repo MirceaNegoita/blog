@@ -36,9 +36,9 @@
   <article class="media">
     <div class="media-left">
       <figure class="image is-64x64">
-        {{-- @if ($post->author->media->count())
+        @if ($post->author->media->count())
           <img src="{{ asset($post->author->media->path) }}" alt="{{ $post->author->name }}">
-        @endif --}}
+        @endif
       </figure>
     </div>
     <div class="media-content">

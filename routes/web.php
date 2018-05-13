@@ -74,4 +74,9 @@ Route::group(['prefix' => 'master','middleware' => 'admin'], function () {
 
     //Widget Routes
     Route::resource('/widget', 'WidgetController');
+
+    //Profile Routes
+    Route::get('/author/edit/{id}', 'AdminController@getProfile')->name('profile.edit');
+    Route::put('/author/update/{id}', 'AdminController@updateProfile')->name('profile.update');
+    
 });

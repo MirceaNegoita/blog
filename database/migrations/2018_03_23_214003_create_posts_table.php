@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('content');
             $table->integer('media_id')->nullable();
             $table->integer('author_id');
+            $table->integer('seo_id')->nullable();
             $table->integer('status_id');
             $table->timestamps();
         });

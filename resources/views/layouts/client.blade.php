@@ -126,7 +126,7 @@
 		    <div class="media-left">
 		      <figure class="image is-48x48">
 			@if(isset($widget->author->media))
-				<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
+					<img src="{{ asset($widget->author->media->path) }}" alt="{{ $widget->author->name }}">
 			@endif
 		      </figure>
 		    </div>

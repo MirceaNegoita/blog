@@ -41,7 +41,7 @@ class AdminController extends Controller
     public function getProfile($id)
     {
         $user = User::find($id);
-
+        
         return view('admin.profile.edit', compact('user'));
     }
 
@@ -51,13 +51,10 @@ class AdminController extends Controller
 
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique',
-            'password' => 'required',
         ]);
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->password = $request->input('password');
         $user->description = $request->input('description');
 
         if ($request->hasFile('image'))
@@ -69,6 +66,8 @@ class AdminController extends Controller
         }
 
         $user->update();
+
+        return redirect()->back()->with("succesess", array("Profile updated"));
 
     }
     
