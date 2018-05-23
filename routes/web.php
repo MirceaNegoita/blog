@@ -72,11 +72,21 @@ Route::group(['prefix' => 'master','middleware' => 'admin'], function () {
     Route::put('/blog/about/update/{id}', 'AboutController@update')->name('about.update');
     Route::get('/blog/about/delete/{id}', 'AboutController@delete')->name('about.delete');
 
-    //Widget Routes
+    //About Widget Routes
     Route::resource('/widget', 'WidgetController');
+
+    //Contact Widget Routes
+    Route::get('/contact_widget/create', 'ContactWidgetController@create')->name('contact.widget.create');
+    Route::post('/contact_widget/post', 'ContactWidgetController@post')->name('contact.widget.post');
+    Route::get('/contact_widget/edit', 'ContactWidgetController@edit')->name('contact.widget.edit');
+    Route::put('/contact_widget/update', 'ContactWidgetController@update')->name('contact.widget.update');
 
     //Profile Routes
     Route::get('/author/edit/{id}', 'AdminController@getProfile')->name('profile.edit');
     Route::put('/author/update/{id}', 'AdminController@updateProfile')->name('profile.update');
+
+    //Messages
+    Route::get('/messages', 'AdminController@getMessages')->name('messages.index');
+    Route::get('/messages/{id}', 'AdminController@showMessage')->name('messages.show');
     
 });

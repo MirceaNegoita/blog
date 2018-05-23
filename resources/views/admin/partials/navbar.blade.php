@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+        <a class="navbar-brand" style="color : #00d1b2" href="{{ route('admin.home') }}">Bloggerful</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -16,45 +16,25 @@
                 <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-messages">
+                @if ($recent_messages->count())
+                    @foreach ($recent_messages as $message)
+                        <li>
+                            <a href="{{ route('messages.show', $message->id) }}">
+                                <div>
+                                    <strong>{{ $message->name }}</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>{{ $message->created_at->diffForHumans() }}</em>
+                                        </span>
+                                </div>
+                                <div>{{ truncate($message->message, 50) }}</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                    @endforeach
+                @endif
                 <li>
-                    <a href="#">
-                        <div>
-                            <strong>John Smith</strong>
-                            <span class="pull-right text-muted">
-                                    <em>Yesterday</em>
-                                </span>
-                        </div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <strong>John Smith</strong>
-                            <span class="pull-right text-muted">
-                                    <em>Yesterday</em>
-                                </span>
-                        </div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <strong>John Smith</strong>
-                            <span class="pull-right text-muted">
-                                    <em>Yesterday</em>
-                                </span>
-                        </div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a class="text-center" href="#">
-                        <strong>Read All Messages</strong>
+                    <a class="text-center" href="{{ route('messages.index') }}">
+                        <strong>Read all messages</strong>
                         <i class="fa fa-angle-right"></i>
                     </a>
                 </li>
@@ -66,7 +46,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
-            <ul class="dropdown-menu dropdown-tasks">
+            {{-- <ul class="dropdown-menu dropdown-tasks">
                 <li>
                     <a href="#">
                         <div>
@@ -138,7 +118,7 @@
                     </a>
                 </li>
             </ul>
-            <!-- /.dropdown-tasks -->
+            <!-- /.dropdown-tasks --> --}}
         </li>
         <!-- /.dropdown -->
         <li class="dropdown">

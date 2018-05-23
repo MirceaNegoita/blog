@@ -10,10 +10,16 @@
             <div class="panel panel-default">
 
                 <div class="panel-heading">
-                    <h3>All Posts</h3>
-                    
-                    <a class="btn btn-success" href="{{ route('post.create') }}"><i class="fa fa-plus"></i>New Post</a>
-                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <h3>All Posts</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <a class="btn btn-success pull-right" id="create-button" href="{{ route('post.create') }}"><i class="fa fa-plus"></i>New Post</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="panel-body">

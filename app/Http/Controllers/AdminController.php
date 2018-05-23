@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Widget;
 use App\ContactMessage;
+use App\ContactWidget;
 use App\User;
 use App\Media;
 
@@ -12,10 +13,13 @@ class AdminController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('auth');
         $widget = Widget::first();
+        $contact_widget = ContactWidget::first();
         $recent_messages = ContactMessage::orderBy('created_at', 'desc')->take(5)->get();
 
         view()->share('widget', $widget);
+        view()->share('contact_widget', $contact_widget);
         view()->share('recent_messages', $recent_messages);
     }
 

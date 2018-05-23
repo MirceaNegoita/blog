@@ -15,7 +15,6 @@
             <li>
                 <a href="{{ route('admin.home') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
-            
             <li>
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Blog<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
@@ -44,7 +43,19 @@
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Widgets<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ route('widget.index') }}">Author Widget</a>
+                        @if (isset($widget))
+                            <a href="{{ route('widget.edit', $widget->id) }}">Author Widget</a>
+                        @else
+                            <a href="{{ route('widget.create') }}">Author Widget</a>
+                        @endif
+                    </li>
+                    
+                    <li>
+                        @if (isset($contact_widget))
+                            <a href="{{ route('contact.widget.edit', $contact_widget->id) }}">Contact Widget</a>    
+                        @else
+                            <a href="{{ route('contact.widget.create') }}">Contact Widget</a>
+                        @endif
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

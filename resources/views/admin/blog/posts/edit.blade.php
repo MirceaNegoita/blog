@@ -66,13 +66,7 @@
                         <label for="status" class="control-label">Status</label>
                         <select name="status" class="form-control">
                             @foreach ($statuses as $status)
-                                @if (isset($post->status))
-                                    @if ($status->id != $post->status->id)
-                                        <option value="{{ $status->id }}">{{ $status->label }}</option>
-                                    @endif
-                                @else
-                                    <option value="{{ $status->id }}">{{ $status->label }}</option>   
-                                @endif
+                                <option value="{{ $status->id }}">{{ $status->label }}</option>   
                             @endforeach
                         </select>
                     </div>

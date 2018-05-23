@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-info"><i class="fa fa-pencil"></i>Update</button>
-                        <a href="{{ route('widget.destroy', ['id' => $widget->destroy]) }}" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</a>
+                        <a href="{{ route('widget.destroy', ['id' => $widget->id]) }}" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</a>
                     </div>
                 </form>
             </div>
