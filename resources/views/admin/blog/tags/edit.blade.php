@@ -6,11 +6,12 @@
 
 @section('content')
     <div class="row" style="padding-top:40px;">
-        <div class="panel panel-default">
-            <div class="panel-heading">
+        <div class="box">
+            <div class="box-heading">
                 <h1>Edit Tag-{{ $tag->id }}</h1>
             </div>
-            <div class="panel-body">
+            <hr>
+            <div class="box-content">
                 <form action="{{ route('tag.update', ['id' => $tag->id]) }}" method="POST">
                     <input type="hidden" name="_method" value="PUT">
                     {{ csrf_field() }}
