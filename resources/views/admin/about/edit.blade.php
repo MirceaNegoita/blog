@@ -6,11 +6,12 @@
 
 @section('content')
     <div class="row" style="padding-top:40px;">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h1>Create Post</h1>
+        <div class="box">
+            <div class="box-heading">
+                <h4 class="heading-title">Edit About Page</h4>
             </div>
-            <div class="panel-body">
+            <hr>
+            <div class="box-content">
                 <form action="{{ route('about.update', ['id' => $about->id]) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">

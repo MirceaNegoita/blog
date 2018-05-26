@@ -7,18 +7,15 @@
 @section('content')
     <div class="row" style="padding-top:40px;">
         <div class="col-sm-12">
-            <div class="panel panel-default">
-
+            <div class="box">
                 <div class="panel-heading">
-                    <h3>All Posts</h3>
-                    
+                    <h4>All Posts</h4>
                     @if(!$abouts->count())
                         <a class="btn btn-success" href="{{ route('about.create') }}"><i class="fa fa-plus"></i>New Page</a>    
-                    @endif
-                    
+                    @endif    
                 </div>
-
-                <div class="panel-body">
+                <hr>
+                <div class="box-content">
                     @if ($abouts->count())
                         <table class="table table-bordered">
                             <thead>
