@@ -6,14 +6,13 @@
 
 @section('content')
     <div class="row" style="padding-top:40px;">
-        <div class="col-sm-12">
-            <div class="panel panel-default">
-
-                <div class="panel-heading">
+        <div class="container-fluid">
+            <div class="box">
+                <div class="box-heading">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-md-6">
-                                <h3>All Posts</h3>
+                                <h4>All Posts</h4>
                             </div>
                             <div class="col-md-6">
                                 <a class="btn btn-success pull-right" id="create-button" href="{{ route('post.create') }}"><i class="fa fa-plus"></i>New Post</a>
@@ -21,8 +20,8 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="panel-body">
+                <hr>
+                <div class="box-content">
                     @if ($posts->count())
                         <table class="table table-bordered">
                             <thead>
@@ -80,7 +79,6 @@
                         <p>No posts found</p>
                     @endif
                 </div>
-
             </div>
         </div>
     </div>
