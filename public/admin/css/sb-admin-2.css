@@ -544,3 +544,19 @@ table.dataTable thead .sorting:after {
     line-height: 1.5;
     background-color: #f8f8f8; */
 }
+
+.box {
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    display: block;
+    padding: 1.25rem;
+    box-sizing: inherit;
+}
+
+.heading-title {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.125;
+    text-align: center;
+}
