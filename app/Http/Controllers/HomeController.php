@@ -19,7 +19,9 @@ class HomeController extends Controller
     public function __construct()
     {
         $widget = Widget::first();
-         
+        $current_route = \Request::route()->getName();
+        
+        view()->share('current_route', $current_route);
         view()->share('widget', $widget);
     }
 
