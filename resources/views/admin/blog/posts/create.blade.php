@@ -13,7 +13,7 @@
                 </div>
                 <hr>
                 <div class="box-content">
-                    <form action="{{ route('widget.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="author" class="control-label">Author</label>
