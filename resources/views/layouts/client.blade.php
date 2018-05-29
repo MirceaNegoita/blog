@@ -12,7 +12,7 @@
     <nav class="nav has-shadow">
       <div class="container">
 	<div class="nav-left">
-		<a href="{{ route('home') }}" class="nav-item">
+		<a class="nav-item">
       <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
 	  </a>
 	</div>
