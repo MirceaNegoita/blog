@@ -20,6 +20,10 @@
                             <input type="text" name="title" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="subtitle" class="control-label">Subtitle</label>
+                            <input type="text" name="subtitle" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="author" class="control-label">Author</label>
                             <select name="author" class="form-control">
                                 <option selected disabled>Select an author</option>
