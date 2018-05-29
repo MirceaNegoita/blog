@@ -16,6 +16,10 @@
                     <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
+                            <label for="title" class="control-label">Title</label>
+                            <input type="text" name="title" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="author" class="control-label">Author</label>
                             <select name="author" class="form-control">
                                 <option selected disabled>Select an author</option>
