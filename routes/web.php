@@ -11,16 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /* 
     Error routes
 */
-Route::get('/deny', function () {
-    return view('deny.blade.php');
-})->name('deny');
+Route::get('/deny', 'HomeController@getDeny')->name('deny');
 
 Auth::routes();
 

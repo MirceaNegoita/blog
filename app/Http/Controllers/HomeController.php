@@ -112,7 +112,10 @@ class HomeController extends Controller
         return redirect()->route('home')->with('success', 'Message Sent');
     }
 
-
+    public function getDeny()
+    {
+        return view('deny.blade.php');
+    }
 
 
 }
