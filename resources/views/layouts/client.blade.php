@@ -12,9 +12,9 @@
     <nav class="nav has-shadow">
       <div class="container">
 	<div class="nav-left">
-		<a class="nav-item">
+		<div class="nav-item">
       <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
-	  </a>
+	  </div>
 	</div>
 	<div class="nav-center">
 	  <a class="nav-item is-tab">
