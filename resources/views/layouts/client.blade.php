@@ -45,9 +45,9 @@
 	</span>
 	
 	<div class="nav-right nav-menu">
-        <a class="nav-item is-tab @if(Request::route()->getName() === 'home') is-active @endif" href="{{ route('home') }}">Home</a>
-        <a class="nav-item is-tab @if(Request::route()->getName() === 'about') is-active @endif"  href="{{ route('about') }}">About</a>
-        <a class="nav-item is-tab @if(Request::route()->getName() === 'contact') is-active @endif" href="{{ route('contact') }}">Contact</a> 
+        <a class="nav-item is-tab @if(isset($current_route) && $current_route === 'home') is-active @endif" href="{{ route('home') }}">Home</a>
+        <a class="nav-item is-tab @if(isset($current_route) && $current_route === 'about') is-active @endif"  href="{{ route('about') }}">About</a>
+        <a class="nav-item is-tab @if(isset($current_route) && $current_route === 'contact') is-active @endif" href="{{ route('contact') }}">Contact</a> 
 	</div>
       </div>
     </nav>
