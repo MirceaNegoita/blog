@@ -32,7 +32,7 @@ class HomeController extends Controller
      */
     public function posts()
     {
-        $posts = Post::orderBy('created_at', 'DESC')->has('media')->where('status_id', 3)->paginate(5);
+        $posts = Post::orderBy('created_at', 'DESC')->has('media')->where('status_id', 12)->paginate(5);
 
         if (!is_null(\request('tag'))){
             $tagId = \request('tag');
