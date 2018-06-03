@@ -33,7 +33,7 @@
                                         <td>{{ $widget->id }}</td>
                                         <td>{{ $widget->title }}</td>
                                         <td><a class="btn btn-info" href="{{ route('widget.edit', ['id' => $widget->id]) }}"><i class="fa fa-pencil"></i>Edit</a></td>
-                                        <td><a class="btn btn-danger" href="{{ route('widget.destroy', ['id' => $widget->id]) }}"><i class="fa fa-trash"></i>Delete</a></td>
+                                        <td><a class="btn btn-danger" href="{{ route('widget.delete', ['id' => $widget->id]) }}"><i class="fa fa-trash"></i>Delete</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -137,4 +137,17 @@ class WidgetController extends AdminController
 
         return redirect()->route('widget.index')->with($notification);
     }
+
+    public function delete($id)
+    {
+        $widget = Widget::find($id);
+        $widget->delete();
+
+        $notification = array(
+            'message' => 'Widget Deleted',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('widget.index')->with($notification);
+    }
 }

@@ -68,6 +68,7 @@ Route::group(['prefix' => 'master','middleware' => 'admin'], function () {
 
     //About Widget Routes
     Route::resource('/widget', 'WidgetController');
+    Route::get('/widget/delete/{id}', 'WidgetController@delete');
 
     //Contact Widget Routes
     Route::get('/contact_widget/create', 'ContactWidgetController@create')->name('contact.widget.create');
