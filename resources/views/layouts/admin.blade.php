@@ -21,7 +21,7 @@
     <link href="{{ asset('admin/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
     <!-- Toastr -->
-    <link href="{{ asset('admin/vendor/toastr-master/build/toastr.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 
     <!-- Custom CSS -->
     <link href="{{ asset('admin/css/sb-admin-2.css') }}" rel="stylesheet">
@@ -64,7 +64,7 @@
     <script src="{{ asset('admin/vendor/metisMenu/metisMenu.min.js') }}"></script>
 
     <!-- Toastr -->
-    <script src="{{ asset('admin/vendor/toastr-master/toastr.js') }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
 
     <!-- Ckeditor -->
     <script src="{{ asset('admin/vendor/ckeditor/ckeditor.js') }}"></script>
