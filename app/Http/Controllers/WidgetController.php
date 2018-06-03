@@ -134,5 +134,7 @@ class WidgetController extends AdminController
             'message' => 'Widget Deleted',
             'alert-type' => 'success'
         );
+
+        return redirect()->route('widget.index')->with($notification);
     }
 }
