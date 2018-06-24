@@ -8,10 +8,10 @@ class Page extends Model
 {
     protected $table = "pages";
 
-    protected $fillable = ['title', 'template_id'];
+    protected $fillable = ['title', 'subtitle', 'content', 'slug' ,'media_id'];
 
-    public function template()
+    public function media()
     {
-        return $this->belongsTo(Template::class);
+        return $this->belongsTo(Media::class);
     }
 }
