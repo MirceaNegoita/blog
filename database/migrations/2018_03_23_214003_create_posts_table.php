@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('subtitle');
+            $table->string('slug');
             $table->string('content');
             $table->integer('media_id')->nullable();
             $table->integer('author_id');

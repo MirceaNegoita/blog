@@ -15,6 +15,8 @@ class CreatePageTemplatesTable extends Migration
     {
         Schema::create('page_templates', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->integer('media_id');
             $table->timestamps();
         });
     }
