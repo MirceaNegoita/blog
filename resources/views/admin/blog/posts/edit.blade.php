@@ -25,6 +25,10 @@
                             <input type="text" class="form-control" name="subtitle" placeholder="Subtitle" value="{{ $post->subtitle }}">
                         </div>
                         <div class="form-group">
+                            <label for="slug" class="control-label">Slug</label>
+                            <input type="text" class="form-control" name="slug" placeholder="Slug" value="{{ $post->slug }}">
+                        </div>
+                        <div class="form-group">
                             <label for="author" class="control-label">Author</label>
                             <select name="author" class="form-control">
                                 <option value="{{ $post->author->id }}">{{ $post->author->name }}</option>
