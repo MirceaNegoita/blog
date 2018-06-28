@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Page;
 use App\About;
 use App\AppMailer;
 use App\Widget;
@@ -20,9 +21,11 @@ class HomeController extends Controller
     {
         $widget = Widget::first();
         $current_route = \Request::route()->getName();
+        $pages = Page::has('media')->has('slug')->get();
         
         view()->share('current_route', $current_route);
         view()->share('widget', $widget);
+        view()->share('pages', $pages);
     }
 
     /**
@@ -56,6 +59,13 @@ class HomeController extends Controller
         $post = Post::find($id);
 
         return view('client.post.index', compact('post'));
+    }
+
+    public function getSlug($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+
+        return view('client.posts.index', compact('post'));
     }
 
     public function search(Request $request)
@@ -115,6 +125,13 @@ class HomeController extends Controller
     public function getDeny()
     {
         return view('deny.blade.php');
+    }
+
+    public function getPage($slug)
+    {
+        $page = Page::where('slug', $slug)->first();
+
+        return view('client.pages.index', compact('page'));
     }
 
 
