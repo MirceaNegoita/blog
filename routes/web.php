@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@posts')->name('home');
 Route::get('/post/{id}/{slug}', 'HomeController@post')->name('post');
+Route::get('/{slug}', 'HomeController@getPage')->name('slug');
 Route::post('/search', 'HomeController@search')->name('search');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
@@ -83,5 +84,21 @@ Route::group(['prefix' => 'master','middleware' => 'admin'], function () {
     //Messages
     Route::get('/messages', 'AdminController@getMessages')->name('messages.index');
     Route::get('/messages/{id}', 'AdminController@showMessage')->name('messages.show');
+
+    //Pages
+    Route::get('/pages', 'PagesController@index')->name('pages.index');
+    Route::get('/pages/create', 'PagesController@create')->name('pages.create');
+    Route::post('/pages/store', 'PagesController@store')->name('pages.store');
+    Route::get('/pages/edit/{id}', 'PagesController@edit')->name('pages.edit');
+    Route::put('/pages/update/{id}', 'PagesController@update')->name('pages.update');
+    Route::get('/pages/delete/{id}', 'PagesController@delete')->name('pages.delete');
+
+    //Templates
+    Route::get('/templates', 'PageTemplateController@index')->name('templates.index');
+    Route::get('/templates/create', 'PageTemplateController@create')->name('templates.create');
+    Route::post('/templates/store', 'PageTemplateController@store')->name('templates.store');
+    Route::get('/templates/edit/{id}', 'PageTemplateController@edit')->name('templates.edit');
+    Route::put('/templates/update/{id}', 'PageTemplateController@update')->name('templates.update');
+    Route::get('/templates/delete/{id}', 'PageTemplateController@delete')->name('templates.delete');
     
 });
