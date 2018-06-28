@@ -46,7 +46,11 @@
 	
 	<div class="nav-right nav-menu">
         <a class="nav-item is-tab @if(isset($current_route) && $current_route === 'home') is-active @endif" href="{{ route('home') }}">Home</a>
-        <a class="nav-item is-tab @if(isset($current_route) && $current_route === 'about') is-active @endif"  href="{{ route('about') }}">About</a>
+        @if ($pages->count())
+						@foreach ($pages as $page)
+							<a class="nav-item is-tab" href="{{ route('slug', $page->slug) }}"></a>
+						@endforeach
+				@endif
         <a class="nav-item is-tab @if(isset($current_route) && $current_route === 'contact') is-active @endif" href="{{ route('contact') }}">Contact</a> 
 	</div>
       </div>
